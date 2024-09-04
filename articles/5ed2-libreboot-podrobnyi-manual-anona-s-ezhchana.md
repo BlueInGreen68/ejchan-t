@@ -3,19 +3,18 @@ title: Libreboot (подробный мануал анона с ежчана)
 tags: [ejchan, libreboot, guide]
 ---
 
-# Libreboot
+<!-- markdownlint-disable-file MD013 -->
 
 <!--toc:start-->
-- [Libreboot](#libreboot)
-  - [Введение](#введение)
-  - [Ноутбук](#ноутбук)
-    - [Магазин или частное лицо?](#магазин-или-частное-лицо)
-  - [Чип](#чип)
-    - [Замена чипа](#замена-чипа)
+- [Введение](#введение)
+- [Ноутбук](#ноутбук)
+  - [Магазин или частное лицо?](#магазин-или-частное-лицо)
+- [Чип](#чип)
+  - [Замена чипа](#замена-чипа)
+- [Прошивка](#прошивка)
+  - [Первый вариант](#первый-вариант)
+  - [Второй вариант](#второй-вариант)
   - [Прошивка](#прошивка)
-    - [Первый вариант](#первый-вариант)
-    - [Второй вариант](#второй-вариант)
-    - [Прошивка](#прошивка)
 <!--toc:end-->
 
 Подробнейший мануал на русском по прошивке ноутбуков `x200s` и `x200` на GNU загрузчик.
@@ -58,7 +57,7 @@ tags: [ejchan, libreboot, guide]
 
 ### Замена чипа
 
-Для этого понадобится полностью новый, **чистый** чип. 
+Для этого понадобится полностью новый, **чистый** чип.
 
 Название: **W25Q128FVSIG**(norFlash). Свой брал в *ChipDip*. Но тут есть свои нюансы.
 
@@ -131,6 +130,7 @@ sudo ./build dependencies ubuntu2004
 ```bash
 git clone https://notabug.org/libreboot/lbmk
 ```
+
 > Примечание от *НЕ* автора, команда выше возвращает 504 ошибку, попробуйте `git clone https://codeberg.org/libreboot/lbmk`, если и эта команда не склонирует репозиторий, то вам сюда [lbmk (libreboot-make)](https://libreboot.org/git.html#lbmk-libreboot-make).
 
 1) Команда выполняет переход в скопированную директорию. Претензий нет.
@@ -146,7 +146,7 @@ sudo nano source/dependencies/ubuntu2004
 > Примечание от *НЕ* автора: опять же, в статье автора указано про другой путь `sudo nano resources/scripts/.../ubuntu2004`.
 > Актуальный список зависимостей на 25/07/24, который был в файле `source/dependecies/ubuntu2004` представлен ниже.
 
-```txt
+```text
 autoconf autogen automake autopoint autotools-dev bc binutils-arm-none-eabi bison build-essential cmake curl device-tree-compiler doxygen e2fsprogs efitools flex gawk gcc-arm-linux-gnueabi gcc-arm-none-eabi gdb gettext git gnat help2man innoextract libdevmapper-dev libfdt-dev libfont-freetype-perl libfreetype6-dev libftdi-dev libfuse-dev libgnutls28-dev liblz4-tool liblzma-dev libncurses5-dev libncurses-dev libnewlib-arm-none-eabi libopts25 libopts25-dev libpci-dev libpython3-dev libsdl2-dev libselinux1-dev libssl-dev libtool libusb-1.0-0 libusb-1.0-0-dev lz4 lzma lzma-alone m4 nasm openssl p7zip p7zip-full parted pciutils perl pkg-config python3 python3-distutils python3-pkg-resources python3-pycryptodome python3-pyelftools python3-setuptools python-is-python3 sharutils swig ttf-unifont unar unifont unzip uuid-dev wget zlib1g-dev ccache
 ```
 
